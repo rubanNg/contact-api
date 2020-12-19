@@ -3,18 +3,6 @@ const { MongoClient } = require('mongodb')
 const MONGODB_URI = 'mongodb+srv://example:V7ZrpCR9vLMdnAF@cluster0.kect8.mongodb.net/example?retryWrites=true&w=majority';
 const MONGODB_DB = 'example';
 
-if (!MONGODB_URI) {
-  throw new Error(
-    'Please define the MONGODB_URI environment variable inside .env.local'
-  )
-}
-
-if (!MONGODB_DB) {
-  throw new Error(
-    'Please define the MONGODB_DB environment variable inside .env.local'
-  )
-}
-
 let cached = global.mongo
 if (!cached) cached = global.mongo = {}
 
